@@ -157,27 +157,6 @@
             align-items: center;
         }
         
-        .cart-icon {
-            position: relative;
-            cursor: pointer;
-        }
-        
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--accent);
-            color: #000;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        
         /* Main Content */
         main {
             padding: 40px 32px;
@@ -462,205 +441,6 @@
             }
         }
         
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .modal-content {
-            background: var(--card);
-            border-radius: 12px;
-            max-width: 800px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-        }
-        
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .close-modal {
-            background: none;
-            border: none;
-            color: var(--muted);
-            font-size: 24px;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        
-        .close-modal:hover {
-            color: #fff;
-        }
-        
-        .modal-body {
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        
-        .modal-image {
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .modal-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .modal-info h2 {
-            margin-bottom: 10px;
-            color: #fff;
-        }
-        
-        .modal-price {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--accent);
-            margin: 15px 0;
-        }
-        
-        .modal-description {
-            color: var(--muted);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .modal-actions {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        @media (max-width: 768px) {
-            .modal-body {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Cart Styles */
-        .cart-modal {
-            display: none;
-        }
-        
-        .cart-items {
-            max-height: 400px;
-            overflow-y: auto;
-            margin-bottom: 20px;
-        }
-        
-        .cart-item {
-            display: flex;
-            gap: 15px;
-            padding: 15px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .cart-item-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .cart-item-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .cart-item-details {
-            flex: 1;
-        }
-        
-        .cart-item-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .cart-item-price {
-            color: var(--accent);
-            font-weight: bold;
-        }
-        
-        .cart-item-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        
-        .quantity-btn {
-            background: rgba(255,255,255,0.1);
-            border: none;
-            color: #fff;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .quantity-btn:hover {
-            background: var(--accent);
-            color: #000;
-        }
-        
-        .cart-item-quantity {
-            margin: 0 10px;
-            font-weight: bold;
-        }
-        
-        .remove-item {
-            background: none;
-            border: none;
-            color: #ff4d4d;
-            cursor: pointer;
-            margin-left: auto;
-        }
-        
-        .cart-total {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 18px;
-            font-weight: bold;
-        }
-        
-        .cart-empty {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--muted);
-        }
-        
-        .cart-empty i {
-            font-size: 48px;
-            margin-bottom: 15px;
-            opacity: 0.5;
-        }
-        
         /* Toast Notification */
         .toast {
             position: fixed;
@@ -707,170 +487,6 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-        
-        /* Admin Panel */
-        .admin-panel {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 3000;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .admin-content {
-            background: var(--card);
-            border-radius: 12px;
-            max-width: 800px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-        }
-        
-        .admin-tabs {
-            display: flex;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .admin-tab {
-            padding: 15px 20px;
-            background: none;
-            border: none;
-            color: var(--muted);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            border-bottom: 2px solid transparent;
-        }
-        
-        .admin-tab.active {
-            color: var(--accent);
-            border-bottom: 2px solid var(--accent);
-        }
-        
-        .admin-tab-content {
-            padding: 20px;
-            display: none;
-        }
-        
-        .admin-tab-content.active {
-            display: block;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #fff;
-            font-weight: 600;
-        }
-        
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-            background: rgba(0,0,0,0.3);
-            border-radius: 8px;
-            color: #fff;
-            font-size: 16px;
-        }
-        
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-        
-        .products-list {
-            max-height: 400px;
-            overflow-y: auto;
-        }
-        
-        .product-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .product-item:last-child {
-            border-bottom: none;
-        }
-        
-        .product-info h4 {
-            color: #fff;
-            margin-bottom: 5px;
-        }
-        
-        .product-info p {
-            color: var(--muted);
-            font-size: 14px;
-        }
-        
-        .product-actions {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .btn-small {
-            padding: 6px 12px;
-            font-size: 14px;
-        }
-        
-        .btn-danger {
-            background: var(--error);
-        }
-        
-        .btn-danger:hover {
-            background: #d32f2f;
-        }
-        
-        /* KiFiy Integration */
-        .kifiy-checkout {
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .kifiy-logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-        
-        .checkout-details {
-            background: rgba(0,0,0,0.3);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .checkout-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        
-        .checkout-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .checkout-total {
-            font-weight: bold;
-            font-size: 18px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 10px;
-            margin-top: 10px;
-        }
     </style>
 </head>
 <body>
@@ -887,14 +503,7 @@
             </ul>
         </nav>
         <div class="actions">
-            <div class="cart-icon" id="cartIcon">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">0</span>
-            </div>
             <a class="btn" href="#login">Entrar</a>
-            <button class="btn btn-outline" id="adminBtn">
-                <i class="fas fa-cog"></i> Admin
-            </button>
         </div>
     </header>
     
@@ -913,7 +522,7 @@
                     <a class="btn btn-outline" href="#contato">Fale conosco</a>
                 </div>
             </div>
-            <img src="https://media.istockphoto.com/id/1165491882/pt/foto/flying-in-futuristic-tunnel-with-fluorescent-ultraviolet-lights-sci-fi-interior-corridor.jpg?s=612x612&w=0&k=20&c=iQGSmgNr6kvOsq1Ys5FA4o3XjQC4ELQ3-WPxCrDGJlo=" alt="Banner destaque">
+            <img src="https://images.unsplash.com/photo-1622547748225-3fc4abd39263?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Banner destaque">
         </section>
 
         <section id="prod">
@@ -976,186 +585,6 @@
         </footer>
     </main>
 
-    <!-- Product Modal -->
-    <div class="modal" id="productModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalProductTitle">Produto</h2>
-                <button class="close-modal" id="closeModal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-image">
-                    <img id="modalProductImage" src="" alt="Produto">
-                </div>
-                <div class="modal-info">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span style="margin-left: 5px; color: var(--muted);">(42)</span>
-                    </div>
-                    <div class="modal-price" id="modalProductPrice">R$0,00</div>
-                    <div class="modal-description" id="modalProductDescription">Descrição do produto.</div>
-                    <div class="modal-actions">
-                        <button class="btn" id="addToCartModal">
-                            <i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho
-                        </button>
-                        <button class="btn btn-outline">
-                            <i class="fas fa-heart"></i> Favoritar
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cart Modal -->
-    <div class="modal cart-modal" id="cartModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Seu Carrinho</h2>
-                <button class="close-modal" id="closeCartModal">&times;</button>
-            </div>
-            <div class="cart-items" id="cartItems">
-                <!-- Cart items will be loaded here -->
-            </div>
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cartTotal">R$0,00</span>
-            </div>
-            <div style="padding: 20px;">
-                <button class="btn" style="width: 100%;" id="checkoutBtn">
-                    <i class="fas fa-credit-card"></i> Finalizar Compra
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- KiFiy Checkout Modal -->
-    <div class="modal" id="kifiyModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Finalizar Compra</h2>
-                <button class="close-modal" id="closeKifiyModal">&times;</button>
-            </div>
-            <div class="kifiy-checkout">
-                <div class="kifiy-logo">KiFiy</div>
-                <p>Você será redirecionado para o KiFiy para finalizar seu pagamento</p>
-                
-                <div class="checkout-details">
-                    <div class="checkout-item">
-                        <span>Itens no carrinho:</span>
-                        <span id="kifiyItemCount">0</span>
-                    </div>
-                    <div class="checkout-item">
-                        <span>Valor total:</span>
-                        <span id="kifiyTotal">R$0,00</span>
-                    </div>
-                    <div class="checkout-item checkout-total">
-                        <span>Total a pagar:</span>
-                        <span id="kifiyFinalTotal">R$0,00</span>
-                    </div>
-                </div>
-                
-                <button class="btn" id="proceedToKifiy">
-                    <i class="fas fa-external-link-alt"></i> Ir para KiFiy
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Admin Panel -->
-    <div class="admin-panel" id="adminPanel">
-        <div class="admin-content">
-            <div class="modal-header">
-                <h2>Painel Administrativo</h2>
-                <button class="close-modal" id="closeAdmin">&times;</button>
-            </div>
-            
-            <div class="admin-tabs">
-                <button class="admin-tab active" data-tab="products">Produtos</button>
-                <button class="admin-tab" data-tab="add-product">Adicionar Produto</button>
-                <button class="admin-tab" data-tab="orders">Pedidos</button>
-            </div>
-            
-            <div class="admin-tab-content active" id="products-tab">
-                <h3 style="margin-bottom: 20px;">Gerenciar Produtos</h3>
-                <div class="products-list" id="adminProductsList">
-                    <!-- Products list for admin -->
-                </div>
-            </div>
-            
-            <div class="admin-tab-content" id="add-product-tab">
-                <h3 style="margin-bottom: 20px;">Adicionar Novo Produto</h3>
-                <form id="addProductForm">
-                    <div class="form-group">
-                        <label for="productTitle">Título do Produto</label>
-                        <input type="text" id="productTitle" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="productDescription">Descrição</label>
-                        <textarea id="productDescription" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="productPrice">Preço (R$)</label>
-                        <input type="number" id="productPrice" step="0.01" min="0" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="productImage">URL da Imagem</label>
-                        <input type="url" id="productImage" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="productCategory">Categoria</label>
-                        <select id="productCategory" required>
-                            <option value="template">Template</option>
-                            <option value="curso">Curso</option>
-                            <option value="plugin">Plugin</option>
-                            <option value="kit">Kit</option>
-                            <option value="ebook">E-book</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="productDiscount">Desconto (%)</label>
-                        <input type="number" id="productDiscount" min="0" max="100" value="0">
-                    </div>
-                    <button type="submit" class="btn">Adicionar Produto</button>
-                </form>
-            </div>
-            
-            <div class="admin-tab-content" id="orders-tab">
-                <h3 style="margin-bottom: 20px;">Pedidos Recentes</h3>
-                <div id="ordersList">
-                    <p style="text-align: center; color: var(--muted); padding: 20px;">
-                        Nenhum pedido realizado ainda.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Admin Login Modal -->
-    <div class="modal" id="adminLoginModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Acesso Administrativo</h2>
-                <button class="close-modal" id="closeAdminLogin">&times;</button>
-            </div>
-            <div style="padding: 20px;">
-                <form id="adminLoginForm">
-                    <div class="form-group">
-                        <label for="adminPassword">Senha de Administrador</label>
-                        <input type="password" id="adminPassword" required>
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%;">
-                        <i class="fas fa-lock"></i> Acessar
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <!-- Toast Notification -->
     <div class="toast" id="toast">
         <i class="fas fa-check-circle"></i>
@@ -1163,8 +592,10 @@
     </div>
 
     <script>
-        // Product data
-        let products = [
+        // Product data - FÁCIL DE EDITAR E ADICIONAR NOVOS PRODUTOS
+        // Para adicionar um novo produto, basta copiar e colar um bloco de produto
+        // e alterar os valores entre aspas
+        const products = [
             {
                 id: 1,
                 title: "Template Premium",
@@ -1172,7 +603,9 @@
                 price: 19.90,
                 image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop",
                 category: "template",
-                discount: 10
+                discount: 10,
+                // LINK DA KIWIFY - ALTERE AQUI
+                kiwifyLink: "https://teste.com.br/produto1"
             },
             {
                 id: 2,
@@ -1181,7 +614,9 @@
                 price: 39.90,
                 image: "https://images.unsplash.com/photo-1526378724668-0f3b2f6f7a3a?q=80&w=1200&auto=format&fit=crop",
                 category: "curso",
-                discount: 0
+                discount: 0,
+                // LINK DA KIWIFY - ALTERE AQUI
+                kiwifyLink: "https://teste.com.br/produto2"
             },
             {
                 id: 3,
@@ -1190,7 +625,9 @@
                 price: 29.90,
                 image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
                 category: "plugin",
-                discount: 15
+                discount: 15,
+                // LINK DA KIWIFY - ALTERE AQUI
+                kiwifyLink: "https://teste.com.br/produto3"
             },
             {
                 id: 4,
@@ -1199,7 +636,9 @@
                 price: 14.90,
                 image: "https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop",
                 category: "kit",
-                discount: 0
+                discount: 0,
+                // LINK DA KIWIFY - ALTERE AQUI
+                kiwifyLink: "https://teste.com.br/produto4"
             },
             {
                 id: 5,
@@ -1208,7 +647,9 @@
                 price: 9.90,
                 image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1200&auto=format&fit=crop",
                 category: "ebook",
-                discount: 20
+                discount: 20,
+                // LINK DA KIWIFY - ALTERE AQUI
+                kiwifyLink: "https://teste.com.br/produto5"
             },
             {
                 id: 6,
@@ -1217,60 +658,36 @@
                 price: 24.90,
                 image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop",
                 category: "kit",
-                discount: 0
-            }
+                discount: 0,
+                // LINK DA KIWIFY - ALTERE AQUI
+                kiwifyLink: "https://teste.com.br/produto6"
+            },
+            // PARA ADICIONAR MAIS PRODUTOS, COLE AQUI:
+            /*
+            {
+                id: 7,
+                title: "NOME DO PRODUTO",
+                description: "DESCRIÇÃO DO PRODUTO",
+                price: 00.00,
+                image: "URL_DA_IMAGEM",
+                category: "categoria",
+                discount: 0,
+                // LINK DA KIWIFY - ALTERE AQUI
+                kiwifyLink: "https://teste.com.br/novoproduto"
+            },
+            */
         ];
-
-        // Cart functionality
-        let cart = [];
-        let cartCount = 0;
-        let nextProductId = 7;
-        const ADMIN_PASSWORD = "nextstore2025";
 
         // DOM Elements
         const productsContainer = document.getElementById('productsContainer');
-        const cartIcon = document.getElementById('cartIcon');
-        const cartModal = document.getElementById('cartModal');
-        const closeCartModal = document.getElementById('closeCartModal');
-        const cartItems = document.getElementById('cartItems');
-        const cartTotal = document.getElementById('cartTotal');
-        const cartCountElement = document.querySelector('.cart-count');
-        const productModal = document.getElementById('productModal');
-        const closeModal = document.getElementById('closeModal');
-        const modalProductTitle = document.getElementById('modalProductTitle');
-        const modalProductImage = document.getElementById('modalProductImage');
-        const modalProductPrice = document.getElementById('modalProductPrice');
-        const modalProductDescription = document.getElementById('modalProductDescription');
-        const addToCartModal = document.getElementById('addToCartModal');
         const searchInput = document.getElementById('searchInput');
         const searchBtn = document.getElementById('searchBtn');
-        const checkoutBtn = document.getElementById('checkoutBtn');
         const toast = document.getElementById('toast');
         const toastMessage = document.getElementById('toastMessage');
-        const adminBtn = document.getElementById('adminBtn');
-        const adminPanel = document.getElementById('adminPanel');
-        const closeAdmin = document.getElementById('closeAdmin');
-        const adminTabs = document.querySelectorAll('.admin-tab');
-        const adminTabContents = document.querySelectorAll('.admin-tab-content');
-        const addProductForm = document.getElementById('addProductForm');
-        const adminProductsList = document.getElementById('adminProductsList');
-        const kifiyModal = document.getElementById('kifiyModal');
-        const closeKifiyModal = document.getElementById('closeKifiyModal');
-        const kifiyItemCount = document.getElementById('kifiyItemCount');
-        const kifiyTotal = document.getElementById('kifiyTotal');
-        const kifiyFinalTotal = document.getElementById('kifiyFinalTotal');
-        const proceedToKifiy = document.getElementById('proceedToKifiy');
-        const adminLoginModal = document.getElementById('adminLoginModal');
-        const closeAdminLogin = document.getElementById('closeAdminLogin');
-        const adminLoginForm = document.getElementById('adminLoginForm');
-
-        // Current product in modal
-        let currentProduct = null;
 
         // Initialize the store
         function initStore() {
             renderProducts(products);
-            loadCartFromStorage();
             setupEventListeners();
         }
 
@@ -1306,24 +723,13 @@
                         <div class="card-desc">${product.description}</div>
                         <div class="price-row">
                             <strong>R$${calculateDiscountedPrice(product).toFixed(2)}</strong>
-                            <button class="btn add-to-cart" data-id="${product.id}">
-                                <i class="fas fa-shopping-cart"></i> Comprar
-                            </button>
+                            <a href="${product.kiwifyLink}" target="_blank" class="btn buy-now" data-id="${product.id}">
+                                <i class="fas fa-shopping-cart"></i> Comprar Agora
+                            </a>
                         </div>
                     </div>
                 `;
                 productsContainer.appendChild(productElement);
-                
-                // Add event listeners to the product card and button
-                const addToCartBtn = productElement.querySelector('.add-to-cart');
-                addToCartBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    addToCart(product.id);
-                });
-                
-                productElement.addEventListener('click', () => {
-                    openProductModal(product);
-                });
             });
         }
 
@@ -1333,177 +739,6 @@
                 return product.price * (1 - product.discount / 100);
             }
             return product.price;
-        }
-
-        // Open product modal
-        function openProductModal(product) {
-            currentProduct = product;
-            modalProductTitle.textContent = product.title;
-            modalProductImage.src = product.image;
-            
-            // Calculate discounted price if applicable
-            const price = calculateDiscountedPrice(product);
-            
-            modalProductPrice.textContent = `R$${price.toFixed(2)}`;
-            if (product.discount > 0) {
-                modalProductPrice.innerHTML += ` <span style="text-decoration: line-through; color: var(--muted); font-size: 16px;">R$${product.price.toFixed(2)}</span>`;
-            }
-            
-            modalProductDescription.textContent = product.description;
-            productModal.style.display = 'flex';
-            updateAddToCartButton();
-        }
-
-        // Add product to cart
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            if (!product) return;
-            
-            const existingItem = cart.find(item => item.id === productId);
-            
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    ...product,
-                    quantity: 1
-                });
-            }
-            
-            updateCart();
-            showToast('Produto adicionado ao carrinho!');
-            
-            // If we're in the product modal, update the button
-            if (currentProduct && currentProduct.id === productId) {
-                updateAddToCartButton();
-            }
-        }
-
-        // Remove product from cart
-        function removeFromCart(productId) {
-            cart = cart.filter(item => item.id !== productId);
-            updateCart();
-        }
-
-        // Update product quantity in cart
-        function updateQuantity(productId, change) {
-            const item = cart.find(item => item.id === productId);
-            if (!item) return;
-            
-            item.quantity += change;
-            
-            if (item.quantity <= 0) {
-                removeFromCart(productId);
-            } else {
-                updateCart();
-            }
-        }
-
-        // Update cart UI and storage
-        function updateCart() {
-            // Update cart count
-            cartCount = cart.reduce((total, item) => total + item.quantity, 0);
-            cartCountElement.textContent = cartCount;
-            
-            // Save to localStorage
-            localStorage.setItem('nextStoreCart', JSON.stringify(cart));
-            
-            // Update cart modal if open
-            if (cartModal.style.display === 'flex') {
-                renderCartItems();
-            }
-        }
-
-        // Render cart items in modal
-        function renderCartItems() {
-            if (cart.length === 0) {
-                cartItems.innerHTML = `
-                    <div class="cart-empty">
-                        <i class="fas fa-shopping-cart"></i>
-                        <p>Seu carrinho está vazio</p>
-                    </div>
-                `;
-                cartTotal.textContent = 'R$0,00';
-                return;
-            }
-            
-            cartItems.innerHTML = '';
-            let total = 0;
-            
-            cart.forEach(item => {
-                const itemPrice = calculateDiscountedPrice(item);
-                const itemTotal = itemPrice * item.quantity;
-                total += itemTotal;
-                
-                const cartItemElement = document.createElement('div');
-                cartItemElement.className = 'cart-item';
-                cartItemElement.innerHTML = `
-                    <div class="cart-item-image">
-                        <img src="${item.image}" alt="${item.title}">
-                    </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-title">${item.title}</div>
-                        <div class="cart-item-price">R$${itemPrice.toFixed(2)}</div>
-                        <div class="cart-item-actions">
-                            <button class="quantity-btn decrease" data-id="${item.id}">-</button>
-                            <span class="cart-item-quantity">${item.quantity}</span>
-                            <button class="quantity-btn increase" data-id="${item.id}">+</button>
-                            <button class="remove-item" data-id="${item.id}">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </div>
-                    </div>
-                `;
-                cartItems.appendChild(cartItemElement);
-            });
-            
-            cartTotal.textContent = `R$${total.toFixed(2)}`;
-            
-            // Add event listeners to cart item buttons
-            document.querySelectorAll('.decrease').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const productId = parseInt(e.target.dataset.id);
-                    updateQuantity(productId, -1);
-                });
-            });
-            
-            document.querySelectorAll('.increase').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const productId = parseInt(e.target.dataset.id);
-                    updateQuantity(productId, 1);
-                });
-            });
-            
-            document.querySelectorAll('.remove-item').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const productId = parseInt(e.target.closest('.remove-item').dataset.id);
-                    removeFromCart(productId);
-                });
-            });
-        }
-
-        // Load cart from localStorage
-        function loadCartFromStorage() {
-            const savedCart = localStorage.getItem('nextStoreCart');
-            if (savedCart) {
-                cart = JSON.parse(savedCart);
-                updateCart();
-            }
-        }
-
-        // Update add to cart button in modal
-        function updateAddToCartButton() {
-            if (!currentProduct) return;
-            
-            const inCart = cart.find(item => item.id === currentProduct.id);
-            
-            if (inCart) {
-                addToCartModal.innerHTML = `<i class="fas fa-check"></i> No Carrinho (${inCart.quantity})`;
-                addToCartModal.disabled = true;
-            } else {
-                addToCartModal.innerHTML = `<i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho`;
-                addToCartModal.disabled = false;
-            }
         }
 
         // Show toast notification
@@ -1545,236 +780,13 @@
             renderProducts(filteredProducts);
         }
 
-        // Admin functions
-        function openAdminPanel() {
-            adminLoginModal.style.display = 'flex';
-        }
-
-        function showAdminPanel() {
-            adminPanel.style.display = 'flex';
-            renderAdminProducts();
-        }
-
-        function renderAdminProducts() {
-            adminProductsList.innerHTML = '';
-            
-            products.forEach(product => {
-                const productElement = document.createElement('div');
-                productElement.className = 'product-item';
-                productElement.innerHTML = `
-                    <div class="product-info">
-                        <h4>${product.title}</h4>
-                        <p>R$${product.price.toFixed(2)} | ${product.category} | ID: ${product.id}</p>
-                    </div>
-                    <div class="product-actions">
-                        <button class="btn btn-small edit-product" data-id="${product.id}">
-                            <i class="fas fa-edit"></i> Editar
-                        </button>
-                        <button class="btn btn-small btn-danger delete-product" data-id="${product.id}">
-                            <i class="fas fa-trash"></i> Excluir
-                        </button>
-                    </div>
-                `;
-                adminProductsList.appendChild(productElement);
-            });
-            
-            // Add event listeners to admin product buttons
-            document.querySelectorAll('.edit-product').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const productId = parseInt(e.target.closest('.edit-product').dataset.id);
-                    editProduct(productId);
-                });
-            });
-            
-            document.querySelectorAll('.delete-product').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const productId = parseInt(e.target.closest('.delete-product').dataset.id);
-                    deleteProduct(productId);
-                });
-            });
-        }
-
-        function addNewProduct(productData) {
-            const newProduct = {
-                id: nextProductId++,
-                ...productData
-            };
-            
-            products.push(newProduct);
-            renderProducts(products);
-            renderAdminProducts();
-            showToast('Produto adicionado com sucesso!');
-        }
-
-        function editProduct(productId) {
-            // In a real application, this would open an edit form
-            showToast('Funcionalidade de edição em desenvolvimento', 'warning');
-        }
-
-        function deleteProduct(productId) {
-            if (confirm('Tem certeza que deseja excluir este produto?')) {
-                products = products.filter(p => p.id !== productId);
-                renderProducts(products);
-                renderAdminProducts();
-                showToast('Produto excluído com sucesso!');
-            }
-        }
-
-        // KiFiy integration
-        function openKifiyCheckout() {
-            if (cart.length === 0) {
-                showToast('Seu carrinho está vazio!', 'error');
-                return;
-            }
-            
-            const total = cart.reduce((sum, item) => {
-                return sum + (calculateDiscountedPrice(item) * item.quantity);
-            }, 0);
-            
-            kifiyItemCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
-            kifiyTotal.textContent = `R$${total.toFixed(2)}`;
-            kifiyFinalTotal.textContent = `R$${total.toFixed(2)}`;
-            
-            kifiyModal.style.display = 'flex';
-        }
-
-        function proceedToKifiyCheckout() {
-            // In a real application, this would redirect to KiFiy with the cart data
-            showToast('Redirecionando para KiFiy...', 'warning');
-            
-            // Simulate redirect
-            setTimeout(() => {
-                showToast('Compra realizada com sucesso!');
-                cart = [];
-                updateCart();
-                kifiyModal.style.display = 'none';
-                cartModal.style.display = 'none';
-            }, 2000);
-        }
-
         // Setup event listeners
         function setupEventListeners() {
-            // Cart icon click
-            cartIcon.addEventListener('click', () => {
-                cartModal.style.display = 'flex';
-                renderCartItems();
-            });
-            
-            // Close cart modal
-            closeCartModal.addEventListener('click', () => {
-                cartModal.style.display = 'none';
-            });
-            
-            // Close product modal
-            closeModal.addEventListener('click', () => {
-                productModal.style.display = 'none';
-            });
-            
-            // Add to cart from modal
-            addToCartModal.addEventListener('click', () => {
-                if (currentProduct) {
-                    addToCart(currentProduct.id);
-                    updateAddToCartButton();
-                }
-            });
-            
             // Search functionality
             searchBtn.addEventListener('click', searchProducts);
             searchInput.addEventListener('keyup', (e) => {
                 if (e.key === 'Enter') {
                     searchProducts();
-                }
-            });
-            
-            // Checkout button
-            checkoutBtn.addEventListener('click', openKifiyCheckout);
-            
-            // Admin button
-            adminBtn.addEventListener('click', openAdminPanel);
-            
-            // Close admin panel
-            closeAdmin.addEventListener('click', () => {
-                adminPanel.style.display = 'none';
-            });
-            
-            // Admin tabs
-            adminTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const tabId = tab.dataset.tab;
-                    
-                    // Update active tab
-                    adminTabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-                    
-                    // Show corresponding content
-                    adminTabContents.forEach(content => {
-                        content.classList.remove('active');
-                        if (content.id === `${tabId}-tab`) {
-                            content.classList.add('active');
-                        }
-                    });
-                });
-            });
-            
-            // Add product form
-            addProductForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                const productData = {
-                    title: document.getElementById('productTitle').value,
-                    description: document.getElementById('productDescription').value,
-                    price: parseFloat(document.getElementById('productPrice').value),
-                    image: document.getElementById('productImage').value,
-                    category: document.getElementById('productCategory').value,
-                    discount: parseInt(document.getElementById('productDiscount').value) || 0
-                };
-                
-                addNewProduct(productData);
-                addProductForm.reset();
-            });
-            
-            // KiFiy modal
-            closeKifiyModal.addEventListener('click', () => {
-                kifiyModal.style.display = 'none';
-            });
-            
-            proceedToKifiy.addEventListener('click', proceedToKifiyCheckout);
-            
-            // Admin login
-            closeAdminLogin.addEventListener('click', () => {
-                adminLoginModal.style.display = 'none';
-            });
-            
-            adminLoginForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                const password = document.getElementById('adminPassword').value;
-                
-                if (password === ADMIN_PASSWORD) {
-                    adminLoginModal.style.display = 'none';
-                    showAdminPanel();
-                    showToast('Acesso administrativo concedido');
-                } else {
-                    showToast('Senha incorreta!', 'error');
-                }
-            });
-            
-            // Close modals when clicking outside
-            window.addEventListener('click', (e) => {
-                if (e.target === productModal) {
-                    productModal.style.display = 'none';
-                }
-                if (e.target === cartModal) {
-                    cartModal.style.display = 'none';
-                }
-                if (e.target === kifiyModal) {
-                    kifiyModal.style.display = 'none';
-                }
-                if (e.target === adminPanel) {
-                    adminPanel.style.display = 'none';
-                }
-                if (e.target === adminLoginModal) {
-                    adminLoginModal.style.display = 'none';
                 }
             });
         }
