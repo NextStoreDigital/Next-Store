@@ -195,6 +195,9 @@
             border-radius: 16px;
             box-shadow: 0 0 25px rgba(255,102,0,0.3);
             transition: transform 0.5s;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
         }
         
         .hero img:hover {
@@ -372,29 +375,6 @@
             color: var(--accent);
         }
         
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background: var(--card);
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-        
-        .social-icons a:hover {
-            background: var(--accent);
-            color: #000;
-            transform: translateY(-3px);
-        }
-        
         /* Responsive Design */
         @media (max-width: 860px) {
             .hero {
@@ -487,6 +467,26 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+        
+        /* Buy Button Styles */
+        .buy-now {
+            padding: 8px 12px;
+            font-size: 14px;
+            background: var(--accent);
+            color: #000;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .buy-now:hover {
+            background: var(--accent-hover);
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -498,7 +498,6 @@
         <nav>
             <ul>
                 <li><a href="#prod">Produtos</a></li>
-                <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
@@ -519,10 +518,10 @@
                 <p>Templates, cursos e ferramentas profissionais com estilo e eficiência. Tudo em um só lugar — entrega imediata e suporte garantido.</p>
                 <div class="cta-row">
                     <a class="btn" href="#prod">Ver produtos</a>
-                    <a class="btn btn-outline" href="#contato">Fale conosco</a>
+                    <a class="btn btn-outline" href="https://discord.gg/5EKBugDa" target="_blank">Fale conosco</a>
                 </div>
             </div>
-            <img src="https://images.unsplash.com/photo-1622547748225-3fc4abd39263?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Banner destaque">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="Banner destaque">
         </section>
 
         <section id="prod">
@@ -545,18 +544,11 @@
                 <div class="footer-section">
                     <h3>Next Store</h3>
                     <p>Loja digital premium com os melhores produtos digitais para impulsionar seu negócio.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
                 </div>
                 <div class="footer-section">
                     <h3>Links Rápidos</h3>
                     <ul>
                         <li><a href="#prod">Produtos</a></li>
-                        <li><a href="#sobre">Sobre Nós</a></li>
                         <li><a href="#contato">Contato</a></li>
                         <li><a href="#faq">FAQ</a></li>
                     </ul>
@@ -567,15 +559,13 @@
                         <li><a href="#ajuda">Central de Ajuda</a></li>
                         <li><a href="#termos">Termos de Uso</a></li>
                         <li><a href="#privacidade">Política de Privacidade</a></li>
-                        <li><a href="#devolucoes">Trocas e Devoluções</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contato</h3>
                     <ul>
-                        <li><i class="fas fa-envelope"></i> contato@nextstore.com</li>
-                        <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
-                        <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP</li>
+                        <li><i class="fas fa-envelope"></i> siglalivros@gmail.com</li>
+                        <li><a href="https://discord.gg/5EKBugDa" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
                     </ul>
                 </div>
             </div>
@@ -723,8 +713,8 @@
                         <div class="card-desc">${product.description}</div>
                         <div class="price-row">
                             <strong>R$${calculateDiscountedPrice(product).toFixed(2)}</strong>
-                            <a href="${product.kiwifyLink}" target="_blank" class="btn buy-now" data-id="${product.id}">
-                                <i class="fas fa-shopping-cart"></i> Comprar Agora
+                            <a href="${product.kiwifyLink}" target="_blank" class="buy-now" data-id="${product.id}">
+                                <i class="fas fa-shopping-cart"></i> Comprar
                             </a>
                         </div>
                     </div>
