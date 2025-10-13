@@ -453,6 +453,76 @@
             background: var(--warning);
         }
         
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 4000;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--card);
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 0 30px rgba(255,102,0,0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+        }
+        
+        .modal-header h2 {
+            color: #fff;
+            font-size: 24px;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            color: var(--muted);
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--accent);
+        }
+        
+        .modal-body {
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        
+        .modal-body h3 {
+            color: #fff;
+            margin: 20px 0 10px 0;
+            font-size: 18px;
+        }
+        
+        .modal-body p {
+            margin-bottom: 15px;
+        }
+        
         /* Loading Animation */
         .loading {
             display: inline-block;
@@ -498,11 +568,10 @@
         <nav>
             <ul>
                 <li><a href="#prod">Produtos</a></li>
-                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
         <div class="actions">
-            <a class="btn" href="#login">Entrar</a>
+            <a class="btn" href="#prod">Produtos</a>
         </div>
     </header>
     
@@ -546,26 +615,16 @@
                     <p>Loja digital premium com os melhores produtos digitais para impulsionar seu negócio.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Links Rápidos</h3>
-                    <ul>
-                        <li><a href="#prod">Produtos</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
                     <h3>Suporte</h3>
                     <ul>
-                        <li><a href="#ajuda">Central de Ajuda</a></li>
-                        <li><a href="#termos">Termos de Uso</a></li>
-                        <li><a href="#privacidade">Política de Privacidade</a></li>
+                        <li><a href="https://discord.gg/5EKBugDa" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
+                        <li><a href="#" id="termsLink"><i class="fas fa-file-contract"></i> Termos de Uso</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contato</h3>
                     <ul>
                         <li><i class="fas fa-envelope"></i> siglalivros@gmail.com</li>
-                        <li><a href="https://discord.gg/5EKBugDa" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
                     </ul>
                 </div>
             </div>
@@ -574,6 +633,46 @@
             </div>
         </footer>
     </main>
+
+    <!-- Terms Modal -->
+    <div class="modal" id="termsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Termos de Serviço</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Relação contratual entre o prestador de um serviço e o seu utilizador.</p>
+                <p><strong>Atenção:</strong> Os nossos termos de serviço está sujeito a mudanças e quaisquer alteração feita, você como usuário dos nossos serviços está concordando previamente com isto.</p>
+                
+                <h3>1. Aceitação dos Termos</h3>
+                <p>Ao realizar uma compra em nossa loja, você concorda automaticamente com todos os termos descritos abaixo. Caso não concorde, pedimos que não prossiga com a compra.</p>
+                
+                <h3>2. Produtos e Serviços</h3>
+                <p>Todos os produtos oferecidos são digitais e enviados de forma automática ou manual após a confirmação do pagamento.</p>
+                <p>As descrições dos produtos são apresentadas de forma clara e objetiva, visando transparência total.</p>
+                
+                <h3>3. Entrega</h3>
+                <p>A entrega é realizada via Discord, e-mail ou plataforma combinada.</p>
+                <p>O tempo de entrega pode variar conforme a forma de pagamento ou fila de atendimento.</p>
+                
+                <h3>4. Reembolso e Trocas</h3>
+                <p>Não realizamos reembolso após o envio do produto digital.</p>
+                <p>Em casos de erro de envio ou produto incorreto, entre em contato com o suporte no prazo máximo de 48 horas.</p>
+                
+                <h3>5. Suporte</h3>
+                <p>O suporte é oferecido através do painel de tickets ou canal oficial de atendimento.</p>
+                <p>O tempo de resposta pode variar conforme a demanda, mas sempre buscamos responder o mais rápido possível.</p>
+                
+                <h3>6. Proibições</h3>
+                <p>É proibido revender, redistribuir ou modificar os produtos sem autorização.</p>
+                <p>Qualquer tentativa de fraude, chargeback indevido ou má-fé resultará em banimento permanente da loja.</p>
+                
+                <h3>7. Alterações dos Termos</h3>
+                <p>A loja reserva-se o direito de alterar estes termos a qualquer momento, sem aviso prévio. Recomendamos revisar periodicamente para estar ciente das atualizações.</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Toast Notification -->
     <div class="toast" id="toast">
@@ -674,6 +773,9 @@
         const searchBtn = document.getElementById('searchBtn');
         const toast = document.getElementById('toast');
         const toastMessage = document.getElementById('toastMessage');
+        const termsModal = document.getElementById('termsModal');
+        const termsLink = document.getElementById('termsLink');
+        const closeModal = document.querySelector('.close-modal');
 
         // Initialize the store
         function initStore() {
@@ -770,6 +872,15 @@
             renderProducts(filteredProducts);
         }
 
+        // Modal functions
+        function openTermsModal() {
+            termsModal.style.display = 'block';
+        }
+
+        function closeTermsModal() {
+            termsModal.style.display = 'none';
+        }
+
         // Setup event listeners
         function setupEventListeners() {
             // Search functionality
@@ -777,6 +888,21 @@
             searchInput.addEventListener('keyup', (e) => {
                 if (e.key === 'Enter') {
                     searchProducts();
+                }
+            });
+
+            // Modal functionality
+            termsLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                openTermsModal();
+            });
+
+            closeModal.addEventListener('click', closeTermsModal);
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === termsModal) {
+                    closeTermsModal();
                 }
             });
         }
