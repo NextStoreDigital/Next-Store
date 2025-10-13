@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nova Shop — Loja Digital</title>
+  <meta name="description" content="Loja digital moderna — tema preto e laranja, com botões animados e visual elegante.">
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --card:#141414;
+      --accent:#ff6600;
+      --accent-hover:#ff8533;
+      --muted:#b3b3b3;
+      --glass: rgba(255,255,255,0.05);
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:#f9f9f9;
+      -webkit-font-smoothing:antialiased;
+    }
+    header{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:20px 32px;background:#111;position:sticky;top:0;z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{
+      width:46px;height:46px;border-radius:50%;
+      background:var(--accent);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;font-size:18px;color:#000;
+      box-shadow:0 0 10px var(--accent);
+    }
+    nav ul{list-style:none;display:flex;gap:20px}
+    nav a{
+      color:var(--muted);text-decoration:none;font-weight:600;position:relative;transition:color .2s;
+    }
+    nav a::after{
+      content:"";position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);transition:width .3s;
+    }
+    nav a:hover{color:#fff}
+    nav a:hover::after{width:100%}
+    .btn{
+      padding:10px 16px;border-radius:8px;background:var(--accent);
+      color:#000;font-weight:700;text-decoration:none;position:relative;
+      overflow:hidden;transition:background .3s,transform .2s;
+    }
+    .btn::before{
+      content:"";position:absolute;inset:0;background:rgba(255,255,255,0.15);
+      transform:translateX(-100%);transition:transform .4s;
+    }
+    .btn:hover::before{transform:translateX(0);}
+    .btn:hover{background:var(--accent-hover);transform:scale(1.05)}
+    .actions{display:flex;gap:12px;align-items:center}
+    main{padding:40px 32px;max-width:1200px;margin:auto}
+    .hero{display:grid;grid-template-columns:1fr 400px;gap:40px;align-items:center;margin-bottom:60px}
+    .hero h1{font-size:40px;margin-bottom:12px;color:#fff;line-height:1.2}
+    .hero p{color:var(--muted);margin-bottom:24px;font-size:16px}
+    .cta-row{display:flex;gap:16px}
+    .hero img{border-radius:16px;box-shadow:0 0 25px rgba(255,102,0,0.3);}
+    .products{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px}
+    .card{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.5);transition:transform .3s, box-shadow .3s;}
+    .card:hover{transform:translateY(-5px);box-shadow:0 8px 30px rgba(255,102,0,0.2)}
+    .card img{width:100%;height:150px;object-fit:cover;}
+    .card-body{padding:16px}
+    .card-title{font-weight:700;margin-bottom:8px;font-size:16px;color:#fff}
+    .card-desc{color:var(--muted);font-size:14px;margin-bottom:10px}
+    .price-row{display:flex;align-items:center;justify-content:space-between}
+    footer{margin-top:60px;padding:30px 32px;border-top:1px solid rgba(255,255,255,0.1);color:var(--muted);text-align:center;font-size:14px;background:#111;}
+    @media(max-width:860px){.hero{grid-template-columns:1fr;text-align:center;}.hero img{margin:auto;}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">NS</div>
+      <strong>Nova Shop</strong>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#prod">Produtos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <a class="btn" href="#cart">Carrinho</a>
+    </div>
+  </header>
+  
+  <main>
+    <section class="hero">
+      <div>
+        <h1>O poder do digital em suas mãos</h1>
+        <p>Templates, cursos e ferramentas profissionais com estilo e eficiência. Tudo em um só lugar — entrega imediata e suporte garantido.</p>
+        <div class="cta-row">
+          <a class="btn" href="#prod">Ver produtos</a>
+          <a class="btn" style="background:transparent;border:1px solid var(--accent);color:var(--accent)" href="#contato">Fale conosco</a>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1622547748225-3fc4abd39263?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Banner destaque">
+    </section>
+
+    <section id="prod">
+      <h2 style="color:#fff;margin-bottom:20px;text-align:center;font-size:28px">Produtos em Destaque</h2>
+      <div class="products">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Template premium">
+          <div class="card-body">
+            <div class="card-title">Template Premium</div>
+            <div class="card-desc">Layout responsivo para landing pages modernas.</div>
+            <div class="price-row"><strong>R$19,90</strong><a class="btn" href="#">Comprar</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1526378724668-0f3b2f6f7a3a?q=80&w=1200&auto=format&fit=crop" alt="Curso online">
+          <div class="card-body">
+            <div class="card-title">Curso Vendas Digitais</div>
+            <div class="card-desc">Aprenda a escalar suas vendas com técnicas de marketing.</div>
+            <div class="price-row"><strong>R$39,90</strong><a class="btn" href="#">Comprar</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Plugin">
+          <div class="card-body">
+            <div class="card-title">Plugin de Automação</div>
+            <div class="card-desc">Otimize tarefas e integrações de forma automática.</div>
+            <div class="price-row"><strong>R$29,90</strong><a class="btn" href="#">Comprar</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop" alt="Kit de marketing">
+          <div class="card-body">
+            <div class="card-title">Kit de Marketing</div>
+            <div class="card-desc">Crie campanhas profissionais com artes prontas.</div>
+            <div class="price-row"><strong>R$14,90</strong><a class="btn" href="#">Comprar</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Nova Shop — Todos os direitos reservados. Desenvolvido com estilo preto e laranja 🔥
+    </footer>
+  </main>
+</body>
+</html>
