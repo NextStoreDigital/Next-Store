@@ -712,6 +712,29 @@
             border: none;
         }
         
+        .kiwify-error {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            color: #333;
+        }
+        
+        .kiwify-error i {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--error);
+        }
+        
+        .kiwify-error h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .kiwify-error p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
         /* Hide main content when showing product detail */
         .main-content.hidden {
             display: none;
@@ -824,6 +847,9 @@
                         <button class="btn" id="detailBuyBtn">
                             <i class="fas fa-shopping-cart"></i> Comprar Agora
                         </button>
+                        <button class="btn btn-outline" id="alternativeBuyBtn" style="display: none;">
+                            <i class="fas fa-external-link-alt"></i> Comprar no Site
+                        </button>
                     </div>
                 </div>
             </div>
@@ -903,6 +929,13 @@
                 <button class="close-kiwify-modal">&times;</button>
             </div>
             <iframe class="kiwify-iframe" id="kiwifyIframe" src="" frameborder="0"></iframe>
+            <div class="kiwify-error" id="kiwifyError">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Erro ao carregar a página de pagamento</h3>
+                <p>Não foi possível conectar com a plataforma de pagamento.</p>
+                <p>Por favor, tente comprar diretamente no site:</p>
+                <a href="#" class="btn" id="directLink" target="_blank">Ir para o site de pagamento</a>
+            </div>
         </div>
     </div>
 
@@ -926,7 +959,7 @@
                 category: "template",
                 discount: 10,
                 // LINK DA KIWIFY - ALTERE AQUI
-                kiwifyLink: "https://pay.kiwify.com.br/VNphI2D?target=blank"
+                kiwifyLink: "https://pay.kiwify.com.br/VNphI2D"
             },
             {
                 id: 2,
@@ -1020,11 +1053,17 @@
         const detailDiscount = document.getElementById('detailDiscount');
         const detailDescription = document.getElementById('detailDescription');
         const detailBuyBtn = document.getElementById('detailBuyBtn');
+        const alternativeBuyBtn = document.getElementById('alternativeBuyBtn');
         
         // Kiwify modal elements
         const kiwifyModal = document.getElementById('kiwifyModal');
         const kiwifyIframe = document.getElementById('kiwifyIframe');
+        const kiwifyError = document.getElementById('kiwifyError');
+        const directLink = document.getElementById('directLink');
         const closeKiwifyModal = document.querySelector('.close-kiwify-modal');
+
+        // Current product being viewed
+        let currentProduct = null;
 
         // Initialize the store
         function initStore() {
@@ -1088,6 +1127,8 @@
             
             if (!product) return;
             
+            currentProduct = product;
+            
             // Update product detail page
             detailImage.src = product.image;
             detailImage.alt = product.title;
@@ -1107,10 +1148,21 @@
             
             detailDescription.textContent = product.description;
             
-            // Set up the buy button
+            // Set up the buy buttons
             detailBuyBtn.onclick = function() {
                 showKiwifyModal(product.kiwifyLink);
             };
+            
+            alternativeBuyBtn.onclick = function() {
+                window.open(product.kiwifyLink, '_blank');
+            };
+            
+            // Show alternative button for problematic links
+            if (product.id === 1) { // Youtube Premium product
+                alternativeBuyBtn.style.display = 'inline-flex';
+            } else {
+                alternativeBuyBtn.style.display = 'none';
+            }
             
             // Show product detail and hide main content
             mainContent.classList.add('hidden');
@@ -1123,7 +1175,23 @@
         // Show Kiwify modal with iframe
         function showKiwifyModal(kiwifyLink) {
             kiwifyIframe.src = kiwifyLink;
+            kiwifyError.style.display = 'none';
+            kiwifyIframe.style.display = 'block';
+            directLink.href = kiwifyLink;
             kiwifyModal.style.display = 'block';
+            
+            // Set timeout to show error if iframe fails to load
+            setTimeout(() => {
+                if (kiwifyIframe.contentDocument && kiwifyIframe.contentDocument.URL === 'about:blank') {
+                    showKiwifyError();
+                }
+            }, 5000);
+        }
+
+        // Show Kiwify error message
+        function showKiwifyError() {
+            kiwifyIframe.style.display = 'none';
+            kiwifyError.style.display = 'block';
         }
 
         // Hide Kiwify modal
@@ -1225,6 +1293,20 @@
 
             // Close Kiwify modal
             closeKiwifyModal.addEventListener('click', hideKiwifyModal);
+            
+            // Iframe error handling
+            kiwifyIframe.addEventListener('error', showKiwifyError);
+            kiwifyIframe.addEventListener('load', function() {
+                // Check if iframe loaded successfully
+                try {
+                    if (kiwifyIframe.contentDocument && kiwifyIframe.contentDocument.URL === 'about:blank') {
+                        showKiwifyError();
+                    }
+                } catch (e) {
+                    // CORS error - show alternative
+                    showKiwifyError();
+                }
+            });
         }
 
         // Initialize the store when DOM is loaded
