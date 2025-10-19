@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/yF0yHYMw/C-pia-de-C-pia-de-Black-Simple-Travel-Logo-2.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Next Store — Loja Digital Premium</title>
@@ -54,22 +55,24 @@
         }
         
         .logo {
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: var(--accent);
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 800;
-            font-size: 18px;
-            color: #000;
-            box-shadow: 0 0 10px var(--accent);
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
         .logo:hover {
-            transform: rotate(15deg);
+            transform: rotate(5deg);
             box-shadow: 0 0 15px var(--accent);
         }
         
@@ -562,15 +565,20 @@
 <body>
     <header>
         <div class="brand">
-            <div class="logo">NS</div>
+            <!-- Logo atualizada da Next Store -->
+            <div class="logo">
+                <img src="https://i.postimg.cc/J0CPfzz2/Next-Store.webp" alt="Logo Next Store">
+            </div>
             <strong>Next Store</strong>
         </div>
         <nav>
+            <!-- Navegação sem o link "Produtos" conforme solicitado -->
             <ul>
-                <li><a href="#prod">Produtos</a></li>
+                <!-- O link "Produtos" foi removido conforme solicitado -->
             </ul>
         </nav>
         <div class="actions">
+            <!-- Mantido apenas o botão laranja "Produtos" -->
             <a class="btn" href="#prod">Produtos</a>
         </div>
     </header>
@@ -590,7 +598,7 @@
                     <a class="btn btn-outline" href="https://discord.gg/5EKBugDa" target="_blank">Fale conosco</a>
                 </div>
             </div>
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="Banner destaque">
+            <img src="https://i.ibb.co/NdsszKnJ/Logo.jpg" alt="Banner destaque">
         </section>
 
         <section id="prod">
