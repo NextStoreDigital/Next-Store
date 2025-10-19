@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link rel="icon" type="image/png" href="https://i.ibb.co/3yRLPRQ3/C-pia-de-C-pia-de-Black-Simple-Travel-Logo-3.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Next Store — Loja Digital Premium</title>
@@ -55,24 +54,22 @@
         }
         
         .logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 10px;
-            overflow: hidden;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+            color: #000;
+            box-shadow: 0 0 10px var(--accent);
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
         .logo:hover {
-            transform: rotate(5deg);
+            transform: rotate(15deg);
             box-shadow: 0 0 15px var(--accent);
         }
         
@@ -560,266 +557,82 @@
             background: var(--accent-hover);
             transform: scale(1.05);
         }
-        
-        /* Product Page Styles */
-        .product-page {
-            display: none;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .product-detail {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .product-image {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 0 25px rgba(255,102,0,0.3);
-        }
-        
-        .product-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-        
-        .product-info h1 {
-            font-size: 32px;
-            margin-bottom: 16px;
-            color: #fff;
-        }
-        
-        .product-price {
-            font-size: 28px;
-            font-weight: bold;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-        
-        .product-description {
-            color: var(--muted);
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-        
-        .product-features {
-            margin-bottom: 30px;
-        }
-        
-        .product-features h3 {
-            color: #fff;
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-        
-        .product-features ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .product-features li {
-            color: var(--muted);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .product-features i {
-            color: var(--accent);
-        }
-        
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--muted);
-            text-decoration: none;
-            margin-bottom: 30px;
-            transition: color 0.3s;
-        }
-        
-        .back-button:hover {
-            color: var(--accent);
-        }
-        
-        /* Kiwify Modal Styles */
-        .kiwify-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 5000;
-        }
-        
-        .kiwify-modal-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 95%;
-            height: 90%;
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 0 50px rgba(255,102,0,0.5);
-        }
-        
-        .kiwify-modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background: #f5f5f5;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .kiwify-modal-header h3 {
-            color: #333;
-            margin: 0;
-            font-size: 18px;
-        }
-        
-        .close-kiwify-modal {
-            background: none;
-            border: none;
-            color: #666;
-            font-size: 24px;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        
-        .close-kiwify-modal:hover {
-            color: #000;
-        }
-        
-        .kiwify-iframe {
-            width: 100%;
-            height: calc(100% - 60px);
-            border: none;
-        }
     </style>
 </head>
 <body>
     <header>
         <div class="brand">
-            <!-- Logo atualizada da Next Store -->
-            <div class="logo">
-                <img src="https://i.postimg.cc/J0CPfzz2/Next-Store.webp" alt="Logo Next Store">
-            </div>
+            <div class="logo">NS</div>
             <strong>Next Store</strong>
         </div>
         <nav>
-            <!-- Navegação sem o link "Produtos" conforme solicitado -->
             <ul>
-                <!-- O link "Produtos" foi removido conforme solicitado -->
+                <li><a href="#prod">Produtos</a></li>
             </ul>
         </nav>
         <div class="actions">
-            <!-- Mantido apenas o botão laranja "Produtos" -->
             <a class="btn" href="#prod">Produtos</a>
         </div>
     </header>
     
     <main>
-        <!-- Página inicial -->
-        <div id="home-page">
-            <section class="welcome-message">
-                <h2><i class="fas fa-gem"></i> Bem-vindo à Next Store</h2>
-                <p>Descubra produtos digitais exclusivos com qualidade premium. Oferecemos templates, cursos, plugins e muito mais para impulsionar seu negócio!</p>
-            </section>
-            
-            <section class="hero">
-                <div>
-                    <h1>O poder do digital em suas mãos</h1>
-                    <p>Templates, cursos e ferramentas profissionais com estilo e eficiência. Tudo em um só lugar — entrega imediata e suporte garantido.</p>
-                    <div class="cta-row">
-                        <a class="btn" href="#prod">Ver produtos</a>
-                        <a class="btn btn-outline" href="https://discord.gg/5EKBugDa" target="_blank">Fale conosco</a>
-                    </div>
-                </div>
-                <img src="https://i.postimg.cc/SxP5ZqCP/Banner-para-perfil-do-Discord-futurista-neon-azul-e-roxo.gif" alt="Banner destaque">
-            </section>
-
-            <section id="prod">
-                <h2 style="color:#fff;margin-bottom:20px;text-align:center;font-size:28px">Produtos em Destaque</h2>
-                
-                <div class="search-container">
-                    <div class="search-box">
-                        <input type="text" id="searchInput" placeholder="Buscar produtos...">
-                        <button id="searchBtn"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
-                
-                <div class="products" id="productsContainer">
-                    <!-- Products will be loaded here by JavaScript -->
-                </div>
-            </section>
-        </div>
+        <section class="welcome-message">
+            <h2><i class="fas fa-gem"></i> Bem-vindo à Next Store</h2>
+            <p>Descubra produtos digitais exclusivos com qualidade premium. Oferecemos templates, cursos, plugins e muito mais para impulsionar seu negócio!</p>
+        </section>
         
-        <!-- Página de produto individual -->
-        <div id="product-page" class="product-page">
-            <a href="#" class="back-button" id="backButton">
-                <i class="fas fa-arrow-left"></i> Voltar para produtos
-            </a>
-            
-            <div class="product-detail">
-                <div class="product-image">
-                    <img id="productDetailImage" src="" alt="Imagem do produto">
-                </div>
-                
-                <div class="product-info">
-                    <h1 id="productDetailTitle"></h1>
-                    <div class="product-price" id="productDetailPrice"></div>
-                    
-                    <div class="product-description" id="productDetailDescription"></div>
-                    
-                    <div class="product-features">
-                        <h3>O que você vai receber:</h3>
-                        <ul id="productFeaturesList">
-                            <!-- Features will be added by JavaScript -->
-                        </ul>
-                    </div>
-                    
-                    <button class="btn" id="productDetailBuyButton" style="padding: 15px 30px; font-size: 18px;">
-                        <i class="fas fa-shopping-cart"></i> Comprar Agora
-                    </button>
+        <section class="hero">
+            <div>
+                <h1>O poder do digital em suas mãos</h1>
+                <p>Templates, cursos e ferramentas profissionais com estilo e eficiência. Tudo em um só lugar — entrega imediata e suporte garantido.</p>
+                <div class="cta-row">
+                    <a class="btn" href="#prod">Ver produtos</a>
+                    <a class="btn btn-outline" href="https://discord.gg/5EKBugDa" target="_blank">Fale conosco</a>
                 </div>
             </div>
-        </div>
-    </main>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="Banner destaque">
+        </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Next Store</h3>
-                <p>Loja digital premium com os melhores produtos digitais para impulsionar seu negócio.</p>
+        <section id="prod">
+            <h2 style="color:#fff;margin-bottom:20px;text-align:center;font-size:28px">Produtos em Destaque</h2>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar produtos...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Suporte</h3>
-                <ul>
-                    <li><a href="https://discord.gg/5EKBugDa" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
-                    <li><a href="#" id="termsLink"><i class="fas fa-file-contract"></i> Termos de Uso</a></li>
-                </ul>
+            
+            <div class="products" id="productsContainer">
+                <!-- Products will be loaded here by JavaScript -->
             </div>
-            <div class="footer-section">
-                <h3>Contato</h3>
-                <ul>
-                    <li><i class="fas fa-envelope"></i> siglalivros@gmail.com</li>
-                </ul>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Next Store</h3>
+                    <p>Loja digital premium com os melhores produtos digitais para impulsionar seu negócio.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Suporte</h3>
+                    <ul>
+                        <li><a href="https://discord.gg/5EKBugDa" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
+                        <li><a href="#" id="termsLink"><i class="fas fa-file-contract"></i> Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> siglalivros@gmail.com</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div>
-            © 2025 Next Store — Todos os direitos reservados. Desenvolvido com estilo preto e laranja 🔥
-        </div>
-    </footer>
+            <div>
+                © 2025 Next Store — Todos os direitos reservados. Desenvolvido com estilo preto e laranja 🔥
+            </div>
+        </footer>
+    </main>
 
     <!-- Terms Modal -->
     <div class="modal" id="termsModal">
@@ -861,17 +674,6 @@
         </div>
     </div>
 
-    <!-- Kiwify Modal -->
-    <div class="kiwify-modal" id="kiwifyModal">
-        <div class="kiwify-modal-content">
-            <div class="kiwify-modal-header">
-                <h3>Finalizar Compra</h3>
-                <button class="close-kiwify-modal">&times;</button>
-            </div>
-            <iframe class="kiwify-iframe" id="kiwifyIframe" src=""></iframe>
-        </div>
-    </div>
-
     <!-- Toast Notification -->
     <div class="toast" id="toast">
         <i class="fas fa-check-circle"></i>
@@ -885,121 +687,67 @@
         const products = [
             {
                 id: 1,
-                title: "Youtube Premium 1 Mês (Convite)",
-                description: "Aproveite todos os benefícios do YouTube Premium por um mês inteiro! Com esta assinatura, você terá acesso ao YouTube sem anúncios, reprodução em segundo plano, downloads para assistir offline e muito mais. Esta é uma conta completa com todos os privilégios da plataforma.",
+                title: "Template Premium",
+                description: "Layout responsivo para landing pages modernas com design elegante e código limpo.",
                 price: 19.90,
-                image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1200&auto=format&fit=crop",
-                category: "assinatura",
+                image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop",
+                category: "template",
                 discount: 10,
-                features: [
-                    "Acesso completo ao YouTube Premium",
-                    "Sem anúncios em todos os vídeos",
-                    "Reprodução em segundo plano",
-                    "Downloads para assistir offline",
-                    "Acesso ao YouTube Music Premium",
-                    "Garantia de 20 dias",
-                    "Suporte via Discord"
-                ],
                 // LINK DA KIWIFY - ALTERE AQUI
                 kiwifyLink: "https://teste.com.br/produto1"
             },
             {
                 id: 2,
                 title: "Curso Vendas Digitais",
-                description: "Domine as técnicas mais eficazes de vendas online com este curso completo. Aprenda desde os fundamentos até estratégias avançadas para escalar seu negócio digital. Com metodologia prática e cases reais, você estará preparado para aumentar suas conversões significativamente.",
+                description: "Aprenda a escalar suas vendas com técnicas de marketing digital comprovadas.",
                 price: 39.90,
-                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
+                image: "https://images.unsplash.com/photo-1526378724668-0f3b2f6f7a3a?q=80&w=1200&auto=format&fit=crop",
                 category: "curso",
                 discount: 0,
-                features: [
-                    "Método comprovado de vendas",
-                    "Estratégias para redes sociais",
-                    "Copywriting persuasivo",
-                    "Funil de vendas eficiente",
-                    "Cases de sucesso reais",
-                    "Certificado de conclusão",
-                    "Acesso vitalício"
-                ],
                 // LINK DA KIWIFY - ALTERE AQUI
                 kiwifyLink: "https://teste.com.br/produto2"
             },
             {
                 id: 3,
                 title: "Plugin de Automação",
-                description: "Automatize tarefas repetitivas e otimize seus processos com este plugin poderoso. Desenvolvido para aumentar a produtividade, ele integra diversas ferramentas e plataformas, permitindo que você foque no que realmente importa para o seu negócio.",
+                description: "Otimize tarefas e integrações de forma automática com este plugin poderoso.",
                 price: 29.90,
                 image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
                 category: "plugin",
                 discount: 15,
-                features: [
-                    "Automação de tarefas repetitivas",
-                    "Integração com múltiplas plataformas",
-                    "Interface intuitiva",
-                    "Configuração personalizável",
-                    "Suporte técnico especializado",
-                    "Atualizações gratuitas",
-                    "Documentação completa"
-                ],
                 // LINK DA KIWIFY - ALTERE AQUI
                 kiwifyLink: "https://teste.com.br/produto3"
             },
             {
                 id: 4,
                 title: "Kit de Marketing",
-                description: "Crie campanhas profissionais com este kit completo de marketing digital. Inclui templates editáveis, artes prontas, modelos de copy e muito mais. Perfeito para empreendedores e marcas que desejam se destacar no mercado digital.",
+                description: "Crie campanhas profissionais com artes prontas e templates editáveis.",
                 price: 14.90,
-                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+                image: "https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop",
                 category: "kit",
                 discount: 0,
-                features: [
-                    "Templates editáveis em PSD e AI",
-                    "Artes para redes sociais",
-                    "Modelos de copywriting",
-                    "Guia de aplicação",
-                    "Paleta de cores profissional",
-                    "Fonts exclusivas",
-                    "Suporte para personalização"
-                ],
                 // LINK DA KIWIFY - ALTERE AQUI
                 kiwifyLink: "https://teste.com.br/produto4"
             },
             {
                 id: 5,
                 title: "E-book Design Gráfico",
-                description: "Aprenda os princípios do design gráfico com este guia completo para iniciantes. Com linguagem acessível e exemplos práticos, você dominará as técnicas essenciais para criar designs profissionais e impactantes.",
+                description: "Guia completo para designers iniciantes com dicas práticas e exemplos.",
                 price: 9.90,
                 image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1200&auto=format&fit=crop",
                 category: "ebook",
                 discount: 20,
-                features: [
-                    "Princípios fundamentais do design",
-                    "Teoria das cores aplicada",
-                    "Tipografia profissional",
-                    "Composição e hierarquia visual",
-                    "Exercícios práticos",
-                    "Exemplos de cases reais",
-                    "Formatos: PDF, EPUB, MOBI"
-                ],
                 // LINK DA KIWIFY - ALTERE AQUI
                 kiwifyLink: "https://teste.com.br/produto5"
             },
             {
                 id: 6,
                 title: "App Mobile UI Kit",
-                description: "Desenvolva interfaces modernas e funcionais para aplicativos móveis com este UI Kit completo. Com componentes cuidadosamente projetados, você acelerará seu processo de desenvolvimento mantendo a qualidade e consistência visual.",
+                description: "Interface completa para aplicativos móveis com componentes modernos.",
                 price: 24.90,
                 image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop",
                 category: "kit",
                 discount: 0,
-                features: [
-                    "Componentes para iOS e Android",
-                    "Design system completo",
-                    "Ícones personalizáveis",
-                    "Templates de telas prontas",
-                    "Documentação detalhada",
-                    "Suporte para Figma e Sketch",
-                    "Atualizações regulares"
-                ],
                 // LINK DA KIWIFY - ALTERE AQUI
                 kiwifyLink: "https://teste.com.br/produto6"
             },
@@ -1013,11 +761,6 @@
                 image: "URL_DA_IMAGEM",
                 category: "categoria",
                 discount: 0,
-                features: [
-                    "Feature 1",
-                    "Feature 2",
-                    "Feature 3"
-                ],
                 // LINK DA KIWIFY - ALTERE AQUI
                 kiwifyLink: "https://teste.com.br/novoproduto"
             },
@@ -1033,15 +776,139 @@
         const termsModal = document.getElementById('termsModal');
         const termsLink = document.getElementById('termsLink');
         const closeModal = document.querySelector('.close-modal');
-        const homePage = document.getElementById('home-page');
-        const productPage = document.getElementById('product-page');
-        const backButton = document.getElementById('backButton');
-        const productDetailImage = document.getElementById('productDetailImage');
-        const productDetailTitle = document.getElementById('productDetailTitle');
-        const productDetailPrice = document.getElementById('productDetailPrice');
-        const productDetailDescription = document.getElementById('productDetailDescription');
-        const productFeaturesList = document.getElementById('productFeaturesList');
-        const productDetailBuyButton = document.getElementById('productDetailBuyButton');
-        const kiwifyModal = document.getElementById('kiwifyModal');
-        const kiwifyIframe = document.getElementById('kiwifyIframe');
-        const closeKiwifyModal = document.querySelector('.close-kiw
+
+        // Initialize the store
+        function initStore() {
+            renderProducts(products);
+            setupEventListeners();
+        }
+
+        // Render products to the page
+        function renderProducts(productsToRender) {
+            productsContainer.innerHTML = '';
+            
+            if (productsToRender.length === 0) {
+                productsContainer.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--muted);">
+                        <i class="fas fa-search" style="font-size: 48px; margin-bottom: 15px; opacity: 0.5;"></i>
+                        <p>Nenhum produto encontrado.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            productsToRender.forEach(product => {
+                const productElement = document.createElement('article');
+                productElement.className = 'card';
+                productElement.innerHTML = `
+                    ${product.discount > 0 ? `<div class="discount">-${product.discount}%</div>` : ''}
+                    <img src="${product.image}" alt="${product.title}">
+                    <div class="card-body">
+                        <div class="card-title">${product.title}</div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="card-desc">${product.description}</div>
+                        <div class="price-row">
+                            <strong>R$${calculateDiscountedPrice(product).toFixed(2)}</strong>
+                            <a href="${product.kiwifyLink}" target="_blank" class="buy-now" data-id="${product.id}">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </a>
+                        </div>
+                    </div>
+                `;
+                productsContainer.appendChild(productElement);
+            });
+        }
+
+        // Calculate discounted price
+        function calculateDiscountedPrice(product) {
+            if (product.discount > 0) {
+                return product.price * (1 - product.discount / 100);
+            }
+            return product.price;
+        }
+
+        // Show toast notification
+        function showToast(message, type = 'success') {
+            toastMessage.textContent = message;
+            toast.className = 'toast';
+            toast.classList.add('show');
+            
+            if (type === 'error') {
+                toast.classList.add('error');
+                toast.querySelector('i').className = 'fas fa-exclamation-circle';
+            } else if (type === 'warning') {
+                toast.classList.add('warning');
+                toast.querySelector('i').className = 'fas fa-exclamation-triangle';
+            } else {
+                toast.querySelector('i').className = 'fas fa-check-circle';
+            }
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Search products
+        function searchProducts() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            
+            if (searchTerm === '') {
+                renderProducts(products);
+                return;
+            }
+            
+            const filteredProducts = products.filter(product => 
+                product.title.toLowerCase().includes(searchTerm) || 
+                product.description.toLowerCase().includes(searchTerm) ||
+                product.category.toLowerCase().includes(searchTerm)
+            );
+            
+            renderProducts(filteredProducts);
+        }
+
+        // Modal functions
+        function openTermsModal() {
+            termsModal.style.display = 'block';
+        }
+
+        function closeTermsModal() {
+            termsModal.style.display = 'none';
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Search functionality
+            searchBtn.addEventListener('click', searchProducts);
+            searchInput.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') {
+                    searchProducts();
+                }
+            });
+
+            // Modal functionality
+            termsLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                openTermsModal();
+            });
+
+            closeModal.addEventListener('click', closeTermsModal);
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === termsModal) {
+                    closeTermsModal();
+                }
+            });
+        }
+
+        // Initialize the store when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initStore);
+    </script>
+</body>
+</html>
