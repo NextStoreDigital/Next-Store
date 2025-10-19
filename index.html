@@ -560,6 +560,160 @@
             background: var(--accent-hover);
             transform: scale(1.05);
         }
+        
+        /* Product Detail Page Styles */
+        .product-detail {
+            display: none;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .product-detail.active {
+            display: block;
+        }
+        
+        .product-detail-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .product-detail-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 25px rgba(255,102,0,0.3);
+        }
+        
+        .product-detail-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .product-detail-info h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .product-detail-info .rating {
+            margin-bottom: 15px;
+        }
+        
+        .product-detail-price {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .product-detail-price .original-price {
+            font-size: 18px;
+            color: var(--muted);
+            text-decoration: line-through;
+            margin-right: 10px;
+        }
+        
+        .product-detail-description {
+            margin-bottom: 30px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        
+        .product-detail-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .back-to-products {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .back-to-products:hover {
+            color: var(--accent-hover);
+        }
+        
+        /* Kiwify Modal Styles */
+        .kiwify-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 5000;
+        }
+        
+        .kiwify-modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 95%;
+            height: 90%;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(255,102,0,0.5);
+        }
+        
+        .kiwify-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: var(--accent);
+            color: #000;
+        }
+        
+        .kiwify-modal-header h3 {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .close-kiwify-modal {
+            background: none;
+            border: none;
+            color: #000;
+            font-size: 24px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .kiwify-iframe {
+            width: 100%;
+            height: calc(100% - 60px);
+            border: none;
+        }
+        
+        /* Hide main content when showing product detail */
+        .main-content.hidden {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .product-detail-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .product-detail-info h1 {
+                font-size: 24px;
+            }
+            
+            .product-detail-price {
+                font-size: 22px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -584,37 +738,79 @@
     </header>
     
     <main>
-        <section class="welcome-message">
-            <h2><i class="fas fa-gem"></i> Bem-vindo à Next Store</h2>
-            <p>Descubra produtos digitais exclusivos com qualidade premium. Oferecemos templates, cursos, plugins e muito mais para impulsionar seu negócio!</p>
-        </section>
-        
-        <section class="hero">
-            <div>
-                <h1>O poder do digital em suas mãos</h1>
-                <p>Templates, cursos e ferramentas profissionais com estilo e eficiência. Tudo em um só lugar — entrega imediata e suporte garantido.</p>
-                <div class="cta-row">
-                    <a class="btn" href="#prod">Ver produtos</a>
-                    <a class="btn btn-outline" href="https://discord.gg/5EKBugDa" target="_blank">Fale conosco</a>
+        <!-- Main Content (Products List) -->
+        <div class="main-content" id="mainContent">
+            <section class="welcome-message">
+                <h2><i class="fas fa-gem"></i> Bem-vindo à Next Store</h2>
+                <p>Descubra produtos digitais exclusivos com qualidade premium. Oferecemos templates, cursos, plugins e muito mais para impulsionar seu negócio!</p>
+            </section>
+            
+            <section class="hero">
+                <div>
+                    <h1>O poder do digital em suas mãos</h1>
+                    <p>Templates, cursos e ferramentas profissionais com estilo e eficiência. Tudo em um só lugar — entrega imediata e suporte garantido.</p>
+                    <div class="cta-row">
+                        <a class="btn" href="#prod">Ver produtos</a>
+                        <a class="btn btn-outline" href="https://discord.gg/5EKBugDa" target="_blank">Fale conosco</a>
+                    </div>
                 </div>
-            </div>
-            <img src="https://i.ibb.co/NdsszKnJ/Logo.jpg" alt="Banner destaque">
-        </section>
+                <img src="https://i.postimg.cc/SxP5ZqCP/Banner-para-perfil-do-Discord-futurista-neon-azul-e-roxo.gif" alt="Banner destaque">
+            </section>
 
-        <section id="prod">
-            <h2 style="color:#fff;margin-bottom:20px;text-align:center;font-size:28px">Produtos em Destaque</h2>
+            <section id="prod">
+                <h2 style="color:#fff;margin-bottom:20px;text-align:center;font-size:28px">Produtos em Destaque</h2>
+                
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Buscar produtos...">
+                        <button id="searchBtn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                
+                <div class="products" id="productsContainer">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+            </section>
+        </div>
+        
+        <!-- Product Detail Page -->
+        <div class="product-detail" id="productDetail">
+            <a href="#" class="back-to-products" id="backToProducts">
+                <i class="fas fa-arrow-left"></i> Voltar para produtos
+            </a>
             
-            <div class="search-container">
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Buscar produtos...">
-                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+            <div class="product-detail-container">
+                <div class="product-detail-image">
+                    <img id="detailImage" src="" alt="Imagem do produto">
+                </div>
+                
+                <div class="product-detail-info">
+                    <h1 id="detailTitle"></h1>
+                    
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    
+                    <div class="product-detail-price">
+                        <span id="detailPrice"></span>
+                        <span id="detailOriginalPrice" class="original-price"></span>
+                        <span id="detailDiscount" class="discount"></span>
+                    </div>
+                    
+                    <div class="product-detail-description" id="detailDescription"></div>
+                    
+                    <div class="product-detail-actions">
+                        <button class="btn" id="detailBuyBtn">
+                            <i class="fas fa-shopping-cart"></i> Comprar Agora
+                        </button>
+                    </div>
                 </div>
             </div>
-            
-            <div class="products" id="productsContainer">
-                <!-- Products will be loaded here by JavaScript -->
-            </div>
-        </section>
+        </div>
 
         <footer>
             <div class="footer-content">
@@ -682,6 +878,17 @@
         </div>
     </div>
 
+    <!-- Kiwify Modal -->
+    <div class="kiwify-modal" id="kiwifyModal">
+        <div class="kiwify-modal-content">
+            <div class="kiwify-modal-header">
+                <h3>Finalizar Compra</h3>
+                <button class="close-kiwify-modal">&times;</button>
+            </div>
+            <iframe class="kiwify-iframe" id="kiwifyIframe" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
     <!-- Toast Notification -->
     <div class="toast" id="toast">
         <i class="fas fa-check-circle"></i>
@@ -695,8 +902,8 @@
         const products = [
             {
                 id: 1,
-                title: "Template Premium",
-                description: "Layout responsivo para landing pages modernas com design elegante e código limpo.",
+                title: "Youtube Premium 1 Mês ( Convite )",
+                description: "- Conta Youtube Premium /n- Conta full acesso (totalmente sua) - Conta com Youtube Premium - Todos os beneficios do Youtube - Garantia +20 dias total! site para login:https://gmail.com",
                 price: 19.90,
                 image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop",
                 category: "template",
@@ -784,6 +991,23 @@
         const termsModal = document.getElementById('termsModal');
         const termsLink = document.getElementById('termsLink');
         const closeModal = document.querySelector('.close-modal');
+        
+        // New elements for product detail page
+        const mainContent = document.getElementById('mainContent');
+        const productDetail = document.getElementById('productDetail');
+        const backToProducts = document.getElementById('backToProducts');
+        const detailImage = document.getElementById('detailImage');
+        const detailTitle = document.getElementById('detailTitle');
+        const detailPrice = document.getElementById('detailPrice');
+        const detailOriginalPrice = document.getElementById('detailOriginalPrice');
+        const detailDiscount = document.getElementById('detailDiscount');
+        const detailDescription = document.getElementById('detailDescription');
+        const detailBuyBtn = document.getElementById('detailBuyBtn');
+        
+        // Kiwify modal elements
+        const kiwifyModal = document.getElementById('kiwifyModal');
+        const kiwifyIframe = document.getElementById('kiwifyIframe');
+        const closeKiwifyModal = document.querySelector('.close-kiwify-modal');
 
         // Initialize the store
         function initStore() {
@@ -820,17 +1044,75 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star-half-alt"></i>
                         </div>
-                        <div class="card-desc">${product.description}</div>
                         <div class="price-row">
                             <strong>R$${calculateDiscountedPrice(product).toFixed(2)}</strong>
-                            <a href="${product.kiwifyLink}" target="_blank" class="buy-now" data-id="${product.id}">
+                            <button class="buy-now" data-id="${product.id}">
                                 <i class="fas fa-shopping-cart"></i> Comprar
-                            </a>
+                            </button>
                         </div>
                     </div>
                 `;
                 productsContainer.appendChild(productElement);
             });
+            
+            // Add event listeners to the buy buttons
+            document.querySelectorAll('.buy-now').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    showProductDetail(productId);
+                });
+            });
+        }
+
+        // Show product detail page
+        function showProductDetail(productId) {
+            const product = products.find(p => p.id === productId);
+            
+            if (!product) return;
+            
+            // Update product detail page
+            detailImage.src = product.image;
+            detailImage.alt = product.title;
+            detailTitle.textContent = product.title;
+            
+            const discountedPrice = calculateDiscountedPrice(product);
+            
+            if (product.discount > 0) {
+                detailPrice.innerHTML = `R$${discountedPrice.toFixed(2)}`;
+                detailOriginalPrice.innerHTML = `R$${product.price.toFixed(2)}`;
+                detailDiscount.innerHTML = `-${product.discount}%`;
+            } else {
+                detailPrice.innerHTML = `R$${product.price.toFixed(2)}`;
+                detailOriginalPrice.innerHTML = '';
+                detailDiscount.innerHTML = '';
+            }
+            
+            detailDescription.textContent = product.description;
+            
+            // Set up the buy button
+            detailBuyBtn.onclick = function() {
+                showKiwifyModal(product.kiwifyLink);
+            };
+            
+            // Show product detail and hide main content
+            mainContent.classList.add('hidden');
+            productDetail.classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Show Kiwify modal with iframe
+        function showKiwifyModal(kiwifyLink) {
+            kiwifyIframe.src = kiwifyLink;
+            kiwifyModal.style.display = 'block';
+        }
+
+        // Hide Kiwify modal
+        function hideKiwifyModal() {
+            kiwifyModal.style.display = 'none';
+            kiwifyIframe.src = '';
         }
 
         // Calculate discounted price
@@ -912,7 +1194,20 @@
                 if (e.target === termsModal) {
                     closeTermsModal();
                 }
+                if (e.target === kiwifyModal) {
+                    hideKiwifyModal();
+                }
             });
+
+            // Back to products button
+            backToProducts.addEventListener('click', function(e) {
+                e.preventDefault();
+                mainContent.classList.remove('hidden');
+                productDetail.classList.remove('active');
+            });
+
+            // Close Kiwify modal
+            closeKiwifyModal.addEventListener('click', hideKiwifyModal);
         }
 
         // Initialize the store when DOM is loaded
